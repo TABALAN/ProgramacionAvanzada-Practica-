@@ -1,0 +1,68 @@
+#include "pch.h"
+#include "Estudiante.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+Estudiante::Estudiante(string pnombreEstudiante, string papellidoEstudiante, string pfechaNacimiento, string ptelefonoEstudiante, string pcarneEstudiante)
+{
+	nombreEstudiante = pnombreEstudiante;
+	apellidoEstudiante = papellidoEstudiante;
+	fechaNacimiento = pfechaNacimiento;
+	telefonoEstudiante = ptelefonoEstudiante;
+	carneEstudiante = pcarneEstudiante;
+}
+
+string Estudiante::ObtenerNombreCompleto()
+{
+	std::cout << "El nombre y el apellido del estudiante es: " << nombreEstudiante << " " << apellidoEstudiante << '\n';
+	return nombreEstudiante + " " + apellidoEstudiante;
+}
+
+string Estudiante::ObtenerTelefono()
+{
+	std::cout << "El numero de telefono es: " << telefonoEstudiante << '\n';
+	return telefonoEstudiante;
+}
+
+string Estudiante::ObtenerCarne()
+{
+	std::cout << "El carne del estudiante es: " << carneEstudiante << '\n';
+	return carneEstudiante;
+}
+
+ void Estudiante::AsignarCarne()
+{
+	std::cout << "Por favor ingrese el nuevo numero de carne para asignar: " << '\n';
+	getline(cin, carne);
+	if (carne == "" || carne.size() != 7)
+	{
+		std::cout << "El numero de carne ingresado no es valido, intente de nuevo" << '\n';
+	}
+	else
+	{
+		carneEstudiante = carne;
+		std::cout << "El carne se ha actualizado correctamente: " << carneEstudiante << '\n';
+	}
+}
+
+string Estudiante::EstaInscrito()
+{
+	std::cout << "El estado actual del/la estudiante es: " << inscripcionEstudiante << '\n';
+	return inscripcionEstudiante;
+}
+
+void Estudiante::Inscribir()
+{
+	std::cout << "Por favor ingrese el estado del estudiante para ser actualizado: " << '\n'; 
+	getline(cin, inscrito);
+	if (inscrito != "Inscrito" && inscrito != "No inscrito")
+	{
+		std::cout << "El valor ingresado no es valido, intente de nuevo" << '\n';
+	}
+	else
+	{
+		inscripcionEstudiante = inscrito;
+		std::cout << "Actualizado correctamente, el estado del/la estudiante es: " << inscripcionEstudiante << '\n';
+	}
+}
