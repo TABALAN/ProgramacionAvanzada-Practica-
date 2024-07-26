@@ -1,0 +1,29 @@
+#include "pch.h"
+#include <iostream>
+#include "Circulo.h"
+#include "Estudiante.h"
+#include <cmath>
+#include <string>
+
+using namespace System;
+
+int main()
+{
+    //Clase circulo
+    std::cout << "-------------------- Primera clase --------------------" << '\n';
+    Circulo circulo(5);
+    std::cout << "El perimetro es: " << circulo.ObtenerPerimetro() << '\n';
+    std::cout << "El area es: " << circulo.ObtenerArea() << '\n';
+    std::cout << "El volumen es: " << circulo.ObtenerVolumen() << '\n';
+
+    //Clase estudiante
+    std::cout << "-------------------- Segunda clase --------------------" << '\n';
+    Estudiante estudiante("Mara", "Montes", "5/06/2003", "4502-6914", "1504118");
+    estudiante.ObtenerNombreCompleto();
+    estudiante.ObtenerTelefono();
+    estudiante.ObtenerCarne();
+    estudiante.AsignarCarne();
+    estudiante.EstaInscrito();
+    estudiante.Inscribir();
+    return 0;
+}
