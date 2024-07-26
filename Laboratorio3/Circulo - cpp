@@ -1,0 +1,29 @@
+#include "pch.h"
+#include "Circulo.h"
+#include <cmath>
+
+Circulo::Circulo(double pRadio)
+{
+	radio = pRadio;
+}
+
+double Circulo::ObtenerPerimetro()
+{
+	//Definir el cálculo
+	double perimetro = 2 * radio * 3.1416;
+	return perimetro;
+}
+
+double Circulo::ObtenerArea()
+{
+	//Definir el cálculo
+	double area = 3.1416 * (radio * radio);
+	return area;
+}
+
+double Circulo::ObtenerVolumen()
+{
+	//Definir el cálculo
+	double volumenCirculo = (4 * 3.1416 * pow(radio,3)) / 3;
+	return  volumenCirculo;
+}
